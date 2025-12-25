@@ -58,6 +58,8 @@ document.addEventListener("DOMContentLoaded", () => {
       audio.play();
       animationInterval = setInterval(updateFrame, frameInterval);
       isPlaying = true;
+      playButton.style.display = "none";
+      pauseButton.style.display = "block";
     }
   }
 
@@ -67,6 +69,8 @@ document.addEventListener("DOMContentLoaded", () => {
       clearInterval(animationInterval);
       audio.pause();
       isPlaying = false;
+      playButton.style.display = "block";
+      pauseButton.style.display = "none";
     }
   }
 
