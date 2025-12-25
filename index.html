@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bad Apple!! ASCII Art</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="apple-icon-leaf-symbol-black-260nw-2471253355.ico" />
+  </head>
+  <body>
+    <div class="controls">
+      <button id="play-button">Play</button>
+      <button id="pause-button">Pause</button>
+      <input
+        type="range"
+        id="volume-control"
+        min="0"
+        max="1"
+        step="0.01"
+        value="1"
+      />
+    </div>
+    <div id="ascii-container">
+      <pre id="ascii-output"></pre>
+    </div>
+    <audio
+      id="background-audio"
+      src="[Alstroemeria Records]Bad Apple!! feat.nomico(Shadow Animation Version)[ACVS.008_Tr.00].wav"
+    ></audio>
+    <script src="script.js"></script>
+  </body>
+</html>

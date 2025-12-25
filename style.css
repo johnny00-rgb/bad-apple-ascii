@@ -1,0 +1,62 @@
+body {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  overflow: hidden; /* Hide scrollbars if content is larger than viewport */
+}
+
+#ascii-container {
+  color: green; /* Classic terminal green */
+  font-family: "Consolas", "Monaco", "Lucida Console", monospace;
+  white-space: pre; /* Preserve whitespace and line breaks */
+  font-size: 8px; /* Adjust as needed */
+  line-height: 0.9; /* Adjust as needed for character height */
+  text-align: center;
+  display: block;
+  width: fit-content;
+  height: fit-content;
+  transform-origin: top left;
+}
+
+/* Optional: Make the ASCII art fill more of the screen, adjust scale as necessary */
+@media (max-width: 768px) {
+  #ascii-container {
+    font-size: 6px;
+    line-height: 0.8;
+  }
+}
+
+.controls {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.controls button {
+  background-color: #222;
+  color: green;
+  border: 1px solid green;
+  padding: 5px 10px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.controls button:hover {
+  background-color: green;
+
+  color: black;
+}
+
+#volume-control {
+  vertical-align: middle;
+
+  margin-left: 10px;
+}
