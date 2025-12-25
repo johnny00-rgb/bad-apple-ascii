@@ -49,17 +49,21 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Function to start the animation
-  function playAnimation() {
+  async function playAnimation() {
     if (!isPlaying && frames.length > 0) {
-      // If paused, just resume. If starting from scratch, reset time.
-      if (currentFrame === 0) {
-        audio.currentTime = 0;
+      try {
+        // If paused, just resume. If starting from scratch, reset time.
+        if (currentFrame === 0) {
+          audio.currentTime = 0;
+        }
+        await audio.play();
+        animationInterval = setInterval(updateFrame, frameInterval);
+        isPlaying = true;
+        playButton.style.display = "none";
+        pauseButton.style.display = "block";
+      } catch (err) {
+        console.error("오디오 재생에 실패했습니다:", err);
       }
-      audio.play();
-      animationInterval = setInterval(updateFrame, frameInterval);
-      isPlaying = true;
-      playButton.style.display = "none";
-      pauseButton.style.display = "block";
     }
   }
 
